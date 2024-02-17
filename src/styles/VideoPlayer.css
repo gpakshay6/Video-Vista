@@ -1,0 +1,112 @@
+.video-player {
+  position: relative;
+  width: 100%;
+  max-width: '100%';
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.video-player:hover .controls {
+  bottom: 0;
+}
+
+.video-player video {
+  width: 100%;
+  display: block;
+  margin: 0 auto;
+}
+
+.controls .MuiSlider-root {
+  width: 100px;
+  margin: 0 10px;
+  color: '#fff'
+}
+.controls {
+  position: absolute;
+  bottom: -70px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2px;
+  box-sizing: border-box;
+  background-color: rgba(0, 0, 0, 1);
+  color: #fff;
+  transition: bottom 0.3s;
+}
+
+.controls button {
+  background-color: rgba(0, 0, 0, 1);
+  border: none;
+  color: white;
+  padding: 5px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.controls input[type="range"] {
+  flex: 1;
+  margin: 0 10px;
+}
+
+.controls select {
+  margin-left: 10px;
+}
+
+select.custom-select {
+  background-color: black; 
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  appearance: none;
+  cursor: pointer;
+  outline: none;
+}
+
+select.custom-select option {
+  background-color: black; 
+  color: white;
+  padding: 15px;
+}
+
+select.custom-select::-ms-expand {
+  display: none;
+}
+
+.input-slider {
+  width: 100%;
+  appearance: none;
+  height: 3px;
+  background: #fff;
+  outline: none;
+  opacity: 0.7;
+  transition: opacity 0.2s;
+}
+
+.input-slider::-webkit-slider-thumb {
+  appearance: none;
+  width: 15px;
+  height: 15px;
+  background: #fa5252;
+  border-radius: 50%;
+}
+
+.description {
+  color: #000;
+  margin: 10px 12px !important;
+  text-align: justify;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  word-wrap: break-word;
+}
