@@ -270,31 +270,33 @@ const VideoPlayer = ({ isInputFocused }) => {
               </Typography>{' '}
               /{' '}
               <Typography variant="caption">{formatTime(duration)}</Typography>
-              <select
-                value={playbackSpeed}
-                onChange={handleSpeedChange}
-                className="custom-select"
-              >
-                <option value={0.5}>0.5x</option>
-                <option value={1}>1x</option>
-                <option value={1.5}>1.5x</option>
-                <option value={2}>2x</option>
-              </select>
               {!isSmallScreen && (
-                <Slider
-                  value={isMuted ? 0 : volume}
-                  min={0}
-                  max={1}
-                  step={0.1}
-                  onChange={handleVolumeChange}
-                  aria-labelledby="Volume"
-                  style={{ color: 'white', width: '70px' }}
-                  size="small"
-                />
+                <>
+                  <select
+                    value={playbackSpeed}
+                    onChange={handleSpeedChange}
+                    className="custom-select"
+                  >
+                    <option value={0.5}>0.5x</option>
+                    <option value={1}>1x</option>
+                    <option value={1.5}>1.5x</option>
+                    <option value={2}>2x</option>
+                  </select>
+                  <Slider
+                    value={isMuted ? 0 : volume}
+                    min={0}
+                    max={1}
+                    step={0.1}
+                    onChange={handleVolumeChange}
+                    aria-labelledby="Volume"
+                    style={{ color: 'white', width: '70px' }}
+                    size="small"
+                  />
+                  <IconButton onClick={toggleMute} color="inherit">
+                    {isMuted ? <VolumeOff /> : <VolumeUp />}
+                  </IconButton>
+                </>
               )}
-              <IconButton onClick={toggleMute} color="inherit">
-                {isMuted ? <VolumeOff /> : <VolumeUp />}
-              </IconButton>
               <button onClick={handleFullScreen}>
                 {isFullScreen ? <FullscreenExitIcon /> : <FullscreenIcon />}
               </button>
